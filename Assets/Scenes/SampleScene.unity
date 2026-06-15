@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 95528848}
   - component: {fileID: 95528847}
   - component: {fileID: 95528850}
+  - component: {fileID: 95528851}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -202,19 +203,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 95528848}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 686055539}
-        m_TargetAssemblyTypeName: SoundButton, Assembly-CSharp
-        m_MethodName: TurnThirdSound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &95528848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,6 +339,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &95528851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95528845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2452ec0f2f744cc08e701d01f5f61268, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 95528847}
+  _audioSource: {fileID: 95528850}
 --- !u!1 &150329194
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,6 +649,7 @@ GameObject:
   m_Component:
   - component: {fileID: 300508726}
   - component: {fileID: 300508727}
+  - component: {fileID: 300508728}
   m_Layer: 5
   m_Name: AllSlider
   m_TagString: Untagged
@@ -729,6 +733,24 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &300508728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300508725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e680755bb89463ebc2ec7f323bf9a56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioMixer: {fileID: 24100000, guid: f9232c44fbdae4946818d7ba170d41ad, type: 2}
+  _audioMixerGroup: {fileID: 24300002, guid: f9232c44fbdae4946818d7ba170d41ad, type: 2}
+  _slider: {fileID: 300508727}
+  _minimumValue: 0.0001
+  _maximumValue: 1
+  _mixerParameter: MasterVolume
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -1595,7 +1617,6 @@ GameObject:
   - component: {fileID: 686055537}
   - component: {fileID: 686055536}
   - component: {fileID: 686055535}
-  - component: {fileID: 686055539}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1689,24 +1710,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &686055539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 686055534}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78fa3bf4fc4c4e97878bf51e863cefdb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSource1: {fileID: 1686360493}
-  audioSource2: {fileID: 1491014433}
-  audioSource3: {fileID: 95528850}
-  _buttonSound1: {fileID: 1686360490}
-  _buttonSound2: {fileID: 1491014430}
-  _buttonSound3: {fileID: 95528847}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1768,6 +1771,7 @@ GameObject:
   - component: {fileID: 850069297}
   - component: {fileID: 850069296}
   - component: {fileID: 850069295}
+  - component: {fileID: 850069298}
   m_Layer: 5
   m_Name: "\u0412\u044B\u043A\u043B/\u0432\u043A\u043B"
   m_TagString: Untagged
@@ -1877,6 +1881,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 850069293}
   m_CullTransparentMesh: 1
+--- !u!114 &850069298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850069293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bf679387592419bafff9d407cc14adb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioMixer: {fileID: 24100000, guid: f9232c44fbdae4946818d7ba170d41ad, type: 2}
+  _muteButton: {fileID: 850069295}
 --- !u!1 &966111186
 GameObject:
   m_ObjectHideFlags: 0
@@ -2173,6 +2191,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1202992135}
   - component: {fileID: 1202992136}
+  - component: {fileID: 1202992137}
   m_Layer: 5
   m_Name: ButtonSlider
   m_TagString: Untagged
@@ -2253,6 +2272,24 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1202992137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1202992134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e680755bb89463ebc2ec7f323bf9a56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioMixer: {fileID: 24100000, guid: f9232c44fbdae4946818d7ba170d41ad, type: 2}
+  _audioMixerGroup: {fileID: -7546813770487439253, guid: f9232c44fbdae4946818d7ba170d41ad, type: 2}
+  _slider: {fileID: 1202992136}
+  _minimumValue: 0.0001
+  _maximumValue: 1
+  _mixerParameter: SoundButton
 --- !u!1 &1235883508
 GameObject:
   m_ObjectHideFlags: 0
@@ -2678,6 +2715,7 @@ GameObject:
   - component: {fileID: 1491014431}
   - component: {fileID: 1491014430}
   - component: {fileID: 1491014433}
+  - component: {fileID: 1491014434}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -2748,19 +2786,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1491014431}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 686055539}
-        m_TargetAssemblyTypeName: SoundButton, Assembly-CSharp
-        m_MethodName: TurnSecondSound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1491014431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2896,6 +2922,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1491014434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491014428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2452ec0f2f744cc08e701d01f5f61268, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 1491014430}
+  _audioSource: {fileID: 1491014433}
 --- !u!1 &1686360488
 GameObject:
   m_ObjectHideFlags: 0
@@ -2909,6 +2949,7 @@ GameObject:
   - component: {fileID: 1686360491}
   - component: {fileID: 1686360490}
   - component: {fileID: 1686360493}
+  - component: {fileID: 1686360494}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -2979,19 +3020,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1686360491}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 686055539}
-        m_TargetAssemblyTypeName: SoundButton, Assembly-CSharp
-        m_MethodName: TurnFirstSound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1686360491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3127,6 +3156,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1686360494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686360488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2452ec0f2f744cc08e701d01f5f61268, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 1686360490}
+  _audioSource: {fileID: 1686360493}
 --- !u!1 &1695809074
 GameObject:
   m_ObjectHideFlags: 0
@@ -3464,8 +3507,6 @@ GameObject:
   - component: {fileID: 1935980037}
   - component: {fileID: 1935980039}
   - component: {fileID: 1935980038}
-  - component: {fileID: 1935980041}
-  - component: {fileID: 1935980042}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -3534,36 +3575,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1935980036}
   m_CullTransparentMesh: 1
---- !u!114 &1935980041
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1935980036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c1ad28aa6bad7744b3c4ca0392e5408, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _audioMixer: {fileID: 24100000, guid: f9232c44fbdae4946818d7ba170d41ad, type: 2}
-  _masterSlider: {fileID: 300508727}
-  _backgroundSlider: {fileID: 2139535358}
-  _buttonSoundSlider: {fileID: 1202992136}
---- !u!114 &1935980042
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1935980036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cab90602606945f2a0696cfe0ce18499, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _audioMixer: {fileID: 24100000, guid: f9232c44fbdae4946818d7ba170d41ad, type: 2}
-  _muteButton: {fileID: 850069295}
 --- !u!1 &1992525158
 GameObject:
   m_ObjectHideFlags: 0
@@ -3721,6 +3732,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2139535357}
   - component: {fileID: 2139535358}
+  - component: {fileID: 2139535359}
   m_Layer: 5
   m_Name: BackgroundSlider
   m_TagString: Untagged
@@ -3801,6 +3813,24 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2139535359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139535356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e680755bb89463ebc2ec7f323bf9a56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioMixer: {fileID: 24100000, guid: f9232c44fbdae4946818d7ba170d41ad, type: 2}
+  _audioMixerGroup: {fileID: -268313830462152068, guid: f9232c44fbdae4946818d7ba170d41ad, type: 2}
+  _slider: {fileID: 2139535358}
+  _minimumValue: 0.0001
+  _maximumValue: 1
+  _mixerParameter: BackgroundVolume
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
